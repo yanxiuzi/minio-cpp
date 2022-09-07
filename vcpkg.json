@@ -23,6 +23,11 @@
     {
       "name": "vcpkg-cmake-config",
       "host": true
+    },
+    {
+      "name": "curl",
+      "version>=": "7.68.0"
     }
-  ]
+  ],
+  "builtin-baseline": "9259a0719d94c402aae2ab7975bc096afdec15df"
 }

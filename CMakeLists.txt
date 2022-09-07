@@ -55,11 +55,16 @@ ELSE(CURL_FOUND)
   MESSAGE(FATAL_ERROR "Could not find the CURL library and development files.")
 ENDIF(CURL_FOUND)
 
-find_package(unofficial-curlpp CONFIG REQUIRED)
-list(APPEND requiredlibs unofficial::curlpp::curlpp)
+if(FALSE)
+find_package(curlpp CONFIG REQUIRED)
+list(APPEND requiredlibs curlpp::curlpp)
 
-find_package(unofficial-inih CONFIG REQUIRED)
-list(APPEND requiredlibs unofficial::inih::inih)
+find_package(inih CONFIG REQUIRED)
+list(APPEND requiredlibs inih::inih)
+endif(FALSE)
+
+#改为查找系统库，减少冲突，如遇到缺少系统库使用apt安装curlpp 和 inih
+list(APPEND requiredlibs pthread z curlpp inih)
 
 find_package(nlohmann_json CONFIG REQUIRED)
 list(APPEND requiredlibs nlohmann_json::nlohmann_json)

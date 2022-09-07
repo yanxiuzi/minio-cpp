@@ -19,3 +19,7 @@ docs/*svg
 docs/*map
 docs/*md5
 include/config.h
+vcpkg-master/*
+miniocpp-sdk/*
+miniocpp-sdk.tar.gz
+vcpkg-master.zip

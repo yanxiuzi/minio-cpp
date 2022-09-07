@@ -17,8 +17,14 @@ list(APPEND SRCS args.cc baseclient.cc client.cc http.cc request.cc response.cc 
 
 add_library(miniocpp STATIC ${SRCS})
 target_link_libraries(miniocpp ${requiredlibs})
+add_library(miniocpp-shared SHARED ${SRCS})
+target_link_libraries(miniocpp-shared -Wl,-Bsymbolic ${requiredlibs})
+set_target_properties(miniocpp-shared PROPERTIES
+                        OUTPUT_NAME miniocpp
+                        VERSION ${MINIOCPP_MAJOR_VERSION}.${MINIOCPP_MINOR_VERSION}.${MINIOCPP_PATCH_VERSION}
+)
 
-list(APPEND S3CLIENT_INSTALL_LIST miniocpp)
+list(APPEND S3CLIENT_INSTALL_LIST miniocpp miniocpp-shared)
 
 SET_TARGET_PROPERTIES(miniocpp PROPERTIES 
   VERSION ${MINIOCPP_MAJOR_VERSION}.${MINIOCPP_MINOR_VERSION}.${MINIOCPP_PATCH_VERSION}
