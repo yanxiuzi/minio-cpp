@@ -6,7 +6,6 @@
   "license": "Apache-2.0",
   "supports": "!windows & !osx & !uwp",
   "dependencies": [
-    "curlpp",
     {
       "name": "inih",
       "features": [
@@ -14,7 +13,6 @@
       ]
     },
     "nlohmann-json",
-    "openssl",
     "pugixml",
     {
       "name": "vcpkg-cmake",
@@ -23,11 +21,6 @@
     {
       "name": "vcpkg-cmake-config",
       "host": true
-    },
-    {
-      "name": "curl",
-      "version>=": "7.68.0"
     }
-  ],
-  "builtin-baseline": "9259a0719d94c402aae2ab7975bc096afdec15df"
+  ]
 }

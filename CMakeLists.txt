@@ -89,6 +89,7 @@ SET(MINIOCPP_MAJOR_VERSION "0")
 SET(MINIOCPP_MINOR_VERSION "1")
 SET(MINIOCPP_PATCH_VERSION "0")
 
+link_libraries(stdc++fs)
 add_subdirectory(include)
 add_subdirectory(src)
 
