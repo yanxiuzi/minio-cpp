@@ -18,4 +18,4 @@ cmake --install build/
 cp -r build/vcpkg_installed/arm64-linux/include $PWD/miniocpp-sdk/debug
 cp -r build/vcpkg_installed/arm64-linux/debug/lib $PWD/miniocpp-sdk/debug
 
-tar -zcvf miniocpp-sdk.tar.gz miniocpp-sdk
+tar -zcvf miniocpp-sdk-aarch64.tar.gz miniocpp-sdk
